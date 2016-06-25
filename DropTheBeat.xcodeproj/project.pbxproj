@@ -1,0 +1,356 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A2A678031D1F05500078CD2D /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2A678021D1F05500078CD2D /* AppDelegate.mm */; };
+		A2A678061D1F05500078CD2D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A678051D1F05500078CD2D /* main.m */; };
+		A2A678091D1F05500078CD2D /* CameraViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2A678081D1F05500078CD2D /* CameraViewController.mm */; };
+		A2A6780B1D1F05500078CD2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2A6780A1D1F05500078CD2D /* Assets.xcassets */; };
+		A2A6780E1D1F05500078CD2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2A6780C1D1F05500078CD2D /* Main.storyboard */; };
+		A2A678171D1F0B090078CD2D /* NSImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2A678161D1F0B090078CD2D /* NSImage+OpenCV.mm */; };
+		A2A6781A1D1F248D0078CD2D /* ThresholdManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2A678191D1F248D0078CD2D /* ThresholdManager.mm */; };
+		A2A6781D1D1F26670078CD2D /* ConfigureViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2A6781C1D1F26670078CD2D /* ConfigureViewController.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A2A677FE1D1F05500078CD2D /* DropTheBeat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DropTheBeat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2A678011D1F05500078CD2D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A2A678021D1F05500078CD2D /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
+		A2A678051D1F05500078CD2D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A2A678071D1F05500078CD2D /* CameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		A2A678081D1F05500078CD2D /* CameraViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CameraViewController.mm; sourceTree = "<group>"; };
+		A2A6780A1D1F05500078CD2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A2A6780D1D1F05500078CD2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A2A6780F1D1F05500078CD2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2A678151D1F0AD60078CD2D /* NSImage+OpenCV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSImage+OpenCV.h"; sourceTree = "<group>"; };
+		A2A678161D1F0B090078CD2D /* NSImage+OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSImage+OpenCV.mm"; sourceTree = "<group>"; };
+		A2A678181D1F24770078CD2D /* ThresholdManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThresholdManager.h; sourceTree = "<group>"; };
+		A2A678191D1F248D0078CD2D /* ThresholdManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ThresholdManager.mm; sourceTree = "<group>"; };
+		A2A6781B1D1F26670078CD2D /* ConfigureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigureViewController.h; sourceTree = "<group>"; };
+		A2A6781C1D1F26670078CD2D /* ConfigureViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ConfigureViewController.mm; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A2A677FB1D1F05500078CD2D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A2A677F51D1F05500078CD2D = {
+			isa = PBXGroup;
+			children = (
+				A2A678001D1F05500078CD2D /* DropTheBeat */,
+				A2A677FF1D1F05500078CD2D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A2A677FF1D1F05500078CD2D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A2A677FE1D1F05500078CD2D /* DropTheBeat.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A2A678001D1F05500078CD2D /* DropTheBeat */ = {
+			isa = PBXGroup;
+			children = (
+				A2A678011D1F05500078CD2D /* AppDelegate.h */,
+				A2A678021D1F05500078CD2D /* AppDelegate.mm */,
+				A2A678071D1F05500078CD2D /* CameraViewController.h */,
+				A2A678081D1F05500078CD2D /* CameraViewController.mm */,
+				A2A6781B1D1F26670078CD2D /* ConfigureViewController.h */,
+				A2A6781C1D1F26670078CD2D /* ConfigureViewController.mm */,
+				A2A678151D1F0AD60078CD2D /* NSImage+OpenCV.h */,
+				A2A678161D1F0B090078CD2D /* NSImage+OpenCV.mm */,
+				A2A678181D1F24770078CD2D /* ThresholdManager.h */,
+				A2A678191D1F248D0078CD2D /* ThresholdManager.mm */,
+				A2A6780A1D1F05500078CD2D /* Assets.xcassets */,
+				A2A6780C1D1F05500078CD2D /* Main.storyboard */,
+				A2A6780F1D1F05500078CD2D /* Info.plist */,
+				A2A678041D1F05500078CD2D /* Supporting Files */,
+			);
+			path = DropTheBeat;
+			sourceTree = "<group>";
+		};
+		A2A678041D1F05500078CD2D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A2A678051D1F05500078CD2D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A2A677FD1D1F05500078CD2D /* DropTheBeat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A2A678121D1F05500078CD2D /* Build configuration list for PBXNativeTarget "DropTheBeat" */;
+			buildPhases = (
+				A2A677FA1D1F05500078CD2D /* Sources */,
+				A2A677FB1D1F05500078CD2D /* Frameworks */,
+				A2A677FC1D1F05500078CD2D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DropTheBeat;
+			productName = DropTheBeat;
+			productReference = A2A677FE1D1F05500078CD2D /* DropTheBeat.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A2A677F61D1F05500078CD2D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = CoreDevo;
+				TargetAttributes = {
+					A2A677FD1D1F05500078CD2D = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = A2A677F91D1F05500078CD2D /* Build configuration list for PBXProject "DropTheBeat" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A2A677F51D1F05500078CD2D;
+			productRefGroup = A2A677FF1D1F05500078CD2D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A2A677FD1D1F05500078CD2D /* DropTheBeat */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A2A677FC1D1F05500078CD2D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2A6780B1D1F05500078CD2D /* Assets.xcassets in Resources */,
+				A2A6780E1D1F05500078CD2D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A2A677FA1D1F05500078CD2D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2A678091D1F05500078CD2D /* CameraViewController.mm in Sources */,
+				A2A678171D1F0B090078CD2D /* NSImage+OpenCV.mm in Sources */,
+				A2A678061D1F05500078CD2D /* main.m in Sources */,
+				A2A678031D1F05500078CD2D /* AppDelegate.mm in Sources */,
+				A2A6781A1D1F248D0078CD2D /* ThresholdManager.mm in Sources */,
+				A2A6781D1D1F26670078CD2D /* ConfigureViewController.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A2A6780C1D1F05500078CD2D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A2A6780D1D1F05500078CD2D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A2A678101D1F05500078CD2D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A2A678111D1F05500078CD2D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A2A678131D1F05500078CD2D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				INFOPLIST_FILE = DropTheBeat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				OTHER_LDFLAGS = (
+					"-lopencv_calib3d",
+					"-lopencv_core",
+					"-lopencv_features2d",
+					"-lopencv_flann",
+					"-lopencv_highgui",
+					"-lopencv_imgcodecs",
+					"-lopencv_imgproc",
+					"-lopencv_ml",
+					"-lopencv_objdetect",
+					"-lopencv_photo",
+					"-lopencv_shape",
+					"-lopencv_stitching",
+					"-lopencv_superres",
+					"-lopencv_ts",
+					"-lopencv_video",
+					"-lopencv_videoio",
+					"-lopencv_videostab",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.coredevo.DropTheBeat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A2A678141D1F05500078CD2D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				INFOPLIST_FILE = DropTheBeat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				OTHER_LDFLAGS = (
+					"-lopencv_calib3d",
+					"-lopencv_core",
+					"-lopencv_features2d",
+					"-lopencv_flann",
+					"-lopencv_highgui",
+					"-lopencv_imgcodecs",
+					"-lopencv_imgproc",
+					"-lopencv_ml",
+					"-lopencv_objdetect",
+					"-lopencv_photo",
+					"-lopencv_shape",
+					"-lopencv_stitching",
+					"-lopencv_superres",
+					"-lopencv_ts",
+					"-lopencv_video",
+					"-lopencv_videoio",
+					"-lopencv_videostab",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.coredevo.DropTheBeat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A2A677F91D1F05500078CD2D /* Build configuration list for PBXProject "DropTheBeat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2A678101D1F05500078CD2D /* Debug */,
+				A2A678111D1F05500078CD2D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A2A678121D1F05500078CD2D /* Build configuration list for PBXNativeTarget "DropTheBeat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2A678131D1F05500078CD2D /* Debug */,
+				A2A678141D1F05500078CD2D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A2A677F61D1F05500078CD2D /* Project object */;
+}
