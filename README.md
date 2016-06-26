@@ -21,3 +21,6 @@ Working with open-cv using matrix Audio processing of Objective-C
 
 ####What's next for Drop-The-Beat
 Make the full version of the DJ pad on paper and improve application UI
+
+![alt tag](https://raw.githubusercontent.com/CoreDevo/Drop-The-Beat/master/Resource/DJPaper.jpg)
+
