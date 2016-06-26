@@ -28,6 +28,8 @@ int counter=0; //credit to pis chen
 bool musicActivated = false;
 bool shouldDetect = false;
 
+cv::Mat *defaultDisplayMat = NULL;
+
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	self.capture = new cv::VideoCapture(0);
@@ -66,7 +68,7 @@ bool shouldDetect = false;
 
 			
 			if (!musicActivated){
-				if ([self detectFrameColor:matFrame detectingColor:PixelColorYellow lowH:88 highH:129 lowS:100 highS:255 lowV:25 highV:145]){
+				if ([self detectFrameColor:matFrame detectingColor:PixelColorBlue lowH:88 highH:129 lowS:100 highS:255 lowV:25 highV:145]){
 					std::cout<<"Blue is pressed"<<std::endl;
 					musicActivated = true;
 					[[NSNotificationCenter defaultCenter] postNotificationName:DBShouldPlayBGMNotification object:self];
@@ -98,7 +100,7 @@ bool shouldDetect = false;
 					//Green button is pressed
 				}
 				
-				if ([self detectFrameColor:matFrame detectingColor:PixelColorPurple lowH:120 highH:160 lowS:70 highS:255 lowV:1 highV:100]){
+				if ([self detectFrameColor:matFrame detectingColor:PixelColorPurple lowH:120 highH:160 lowS:90 highS:255 lowV:1 highV:100]){
 					[[NSNotificationCenter defaultCenter] postNotificationName:DBShouldPlayAudioNotification
 																		object:self
 																	  userInfo:@{@"tag":[NSNumber numberWithInteger:SETTING_TAG_AUDIO4]}];
@@ -118,7 +120,15 @@ bool shouldDetect = false;
 			
 		}
 		
-		
+		if (defaultDisplayMat != NULL) {
+			cv::Mat bgrFrame;
+			cv::cvtColor(*defaultDisplayMat, bgrFrame, CV_GRAY2BGR);
+			NSImage *processedFrame = [[NSImage alloc] initWithCVMat:bgrFrame];
+			self.processedCameraView.image = processedFrame;
+
+			delete defaultDisplayMat;
+			defaultDisplayMat = NULL;
+		}
 
 	}
 }
@@ -169,6 +179,12 @@ bool shouldDetect = false;
 		cv::cvtColor(imgThresholded, bgrFrame, CV_GRAY2BGR);
 		NSImage *processedFrame = [[NSImage alloc] initWithCVMat:bgrFrame];
 		self.processedCameraView.image = processedFrame;
+	} else {
+		if (defaultDisplayMat == NULL) {
+			defaultDisplayMat = new cv::Mat(imgThresholded);
+		} else {
+			cv::add(*defaultDisplayMat, imgThresholded, *defaultDisplayMat);
+		}
 	}
 
 	int currentPixel = cv::countNonZero(imgThresholded);
@@ -202,7 +218,7 @@ bool shouldDetect = false;
 			break;
 	}
 
-	return previousPixel>2*currentPixel;
+	return previousPixel>2.5*currentPixel;
 }
 
 - (void)setRepresentedObject:(id)representedObject {

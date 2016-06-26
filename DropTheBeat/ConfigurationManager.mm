@@ -29,6 +29,7 @@
 		highV = 255;
 
 		filePathsDict = [[NSMutableDictionary alloc] init];
+		currentDisplayFilter = PixelColorNone;
 	}
 	return self;
 }
