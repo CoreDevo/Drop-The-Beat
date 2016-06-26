@@ -8,12 +8,13 @@
 
 #import "SettingViewController.h"
 
-int SETTING_TAG_BGM = 9;
-int SETTING_TAG_AUDIO1 = 1;
-int SETTING_TAG_AUDIO2 = 2;
-int SETTING_TAG_AUDIO3 = 3;
-int SETTING_TAG_AUDIO4 = 4;
-int SETTING_TAG_AUDIO5 = 5;
+NSInteger SETTING_TAG_BGM = 9;
+NSInteger SETTING_TAG_AUDIO1 = 1;
+NSInteger SETTING_TAG_AUDIO2 = 2;
+NSInteger SETTING_TAG_AUDIO3 = 3;
+NSInteger SETTING_TAG_AUDIO4 = 4;
+NSInteger SETTING_TAG_AUDIO5 = 5;
+
 
 @interface SettingViewController ()
 
@@ -57,6 +58,35 @@ NSArray *_selectButtons;
 		[button setTarget:self];
 		[button setAction:@selector(selectButtonPressed:)];
 	}
+
+	[_startButton setEnabled:NO];
+	[_startButton setTarget:self];
+	[_startButton setAction:@selector(startButtonPressed:)];
+	[_loadFilesButton setTarget:self];
+	[_loadFilesButton setAction:@selector(loadFilesButton:)];
+
+	[self loadUserDefaults];
+}
+
+- (void)loadUserDefaults {
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSArray *tags = @[[NSNumber numberWithInteger:SETTING_TAG_BGM],
+					  [NSNumber numberWithInteger:SETTING_TAG_AUDIO1],
+					  [NSNumber numberWithInteger:SETTING_TAG_AUDIO2],
+					  [NSNumber numberWithInteger:SETTING_TAG_AUDIO3],
+					  [NSNumber numberWithInteger:SETTING_TAG_AUDIO4],
+					  [NSNumber numberWithInteger:SETTING_TAG_AUDIO5]];
+	for (NSNumber *tag in tags) {
+		NSString *key = [NSString stringWithFormat:@"FILE_PATH_%@", tag];
+		NSURL *url = [defaults URLForKey:key];
+		if (url != nil) {
+			NSTextField *textField = [_textFields objectAtIndex:[_textFields indexOfObjectPassingTest:^BOOL(NSTextField * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+				return obj.tag == [tag integerValue];
+			}]];
+			[textField setStringValue:[url absoluteString]];
+			[[ConfigurationManager sharedManager].filePathsDict setObject:url forKey:tag];
+		}
+	}
 }
 
 - (void)selectButtonPressed: (NSButton *)button {
@@ -79,8 +109,19 @@ NSArray *_selectButtons;
 			}]];
 			[textField setStringValue:[url absoluteString]];
 			[[ConfigurationManager sharedManager].filePathsDict setObject:url forKey: [NSNumber numberWithInteger:button.tag]];
+			[[NSUserDefaults standardUserDefaults] setURL:url forKey:[NSString stringWithFormat:@"FILE_PATH_%@", [NSNumber numberWithInteger:button.tag]]];
 		}
 	}
+}
+
+- (void)startButtonPressed: (NSButton *)button {
+
+}
+
+- (void)loadFilesButton: (NSButton *)button {
+	[[AudioPlayer sharedInstance] loadAudioFile:[ConfigurationManager sharedManager].filePathsDict complete:^(BOOL success) {
+		[_startButton setEnabled:YES];
+	}];
 }
 
 @end

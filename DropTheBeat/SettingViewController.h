@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "ConfigurationManager.h"
+#import "AudioPlayer.h"
 
 @interface SettingViewController : NSViewController
 @property (weak) IBOutlet NSTextField *bgmFilePathText;
@@ -22,5 +23,7 @@
 @property (weak) IBOutlet NSButton *audio3FileSelectButton;
 @property (weak) IBOutlet NSButton *audio4FileSelectButton;
 @property (weak) IBOutlet NSButton *audio5FileSelectButton;
+@property (weak) IBOutlet NSButton *startButton;
+@property (weak) IBOutlet NSButton *loadFilesButton;
 
 @end

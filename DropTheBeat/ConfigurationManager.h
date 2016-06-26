@@ -36,7 +36,7 @@
 @property(nonatomic) int highH;
 @property(nonatomic) int highS;
 @property(nonatomic) int highV;
-@property(nonatomic) NSMutableDictionary *filePathsDict;
+@property(atomic) NSMutableDictionary *filePathsDict;
 
 +(ConfigurationManager *) sharedManager;
 

@@ -11,6 +11,9 @@
 
 @implementation AudioPlayer
 
+BOOL _running = NO;
+NSMutableDictionary *_fileDatas;
+
 + (AudioPlayer *) sharedInstance {
 	static AudioPlayer *instance = nil;
 	@synchronized (self) {
@@ -19,6 +22,38 @@
 		}
 	}
 	return self;
+}
+
+- (void) loadAudioFile:(NSDictionary *)filePaths complete:(AudioPlayerLoadFileCompleteCallback)onComplete {
+	dispatch_group_t loadGroup = dispatch_group_create();
+	for (NSNumber *key in filePaths) {
+		__block NSNumber *tag = key;
+		__block NSURL *url = [filePaths objectForKey:tag];
+		dispatch_group_enter(loadGroup);
+		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+			NSData *fileData = [[NSData alloc] initWithContentsOfURL:url];
+			@synchronized (self) {
+				[_fileDatas setObject:fileData forKey:tag];
+			}
+			dispatch_group_leave(loadGroup);
+		});
+	}
+
+	dispatch_group_notify(loadGroup, dispatch_get_main_queue(), ^{
+		onComplete(true);
+	});
+}
+
+- (void) start {
+	_running = YES;
+}
+
+- (void) stop {
+	_running = NO;
+}
+
+- (void) playBackgroundMusic {
+	if (!_running) { return; }
 }
 
 @end
