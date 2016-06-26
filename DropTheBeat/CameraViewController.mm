@@ -125,7 +125,7 @@ bool musicActivated = false;
 
 - (BOOL) detectFrameColor: (cv::Mat)frame detectingColor:(enum PixelColor)detectingColor lowH:(int)lowH highH:(int)highH lowS:(int)lowS highS:(int)highS lowV:(int)lowV highV:(int)highV{
 	cv::Mat hsvFrame;
-	cv::cvtColor(frame, hsvFrame, CV_RGB2HSV);
+	cv::cvtColor(frame, hsvFrame, CV_BGR2HSV);
 	cv::Mat imgThresholded;
 	cv::inRange(hsvFrame, cv::Scalar(lowH, lowS, lowV), cv::Scalar(highH, highS, highV), imgThresholded); //Threshold the image
 	//morphological opening (remove small objects from the foreground)
