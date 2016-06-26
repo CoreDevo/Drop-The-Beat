@@ -64,37 +64,37 @@
 
 - (void) lowHueChanged:(NSSlider *)slider {
 	int value = (int)slider.doubleValue;
-	[ThresholdManager sharedManager].lowH = value;
+	[ConfigurationManager sharedManager].lowH = value;
 	[_lowHueValue setStringValue: [NSString stringWithFormat:@"%d", value]];
 }
 
 - (void) highHueChanged:(NSSlider *)slider {
 	int value = (int)slider.doubleValue;
-	[ThresholdManager sharedManager].highH = value;
+	[ConfigurationManager sharedManager].highH = value;
 	[_highHueValue setStringValue: [NSString stringWithFormat:@"%d", value]];
 }
 
 - (void) lowSatChanged:(NSSlider *)slider {
 	int value = (int)slider.doubleValue;
-	[ThresholdManager sharedManager].lowS = value;
+	[ConfigurationManager sharedManager].lowS = value;
 	[_lowSatValue setStringValue: [NSString stringWithFormat:@"%d", value]];
 }
 
 - (void) highSatChanged:(NSSlider *)slider {
 	int value = (int)slider.doubleValue;
-	[ThresholdManager sharedManager].highS = value;
+	[ConfigurationManager sharedManager].highS = value;
 	[_highSatValue setStringValue: [NSString stringWithFormat:@"%d", value]];
 }
 
 - (void) lowBrightChanged:(NSSlider *)slider {
 	int value = (int)slider.doubleValue;
-	[ThresholdManager sharedManager].lowV = value;
+	[ConfigurationManager sharedManager].lowV = value;
 	[_lowBrightValue setStringValue: [NSString stringWithFormat:@"%d", value]];
 }
 
 - (void) highBrightChanged:(NSSlider *)slider {
 	int value = (int)slider.doubleValue;
-	[ThresholdManager sharedManager].highV = value;
+	[ConfigurationManager sharedManager].highV = value;
 	[_highBrightValue setStringValue: [NSString stringWithFormat:@"%d", value]];
 }
 

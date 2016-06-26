@@ -35,14 +35,14 @@ NSTimer *_refreshTimer;
 
 - (cv::Mat) processFrame: (cv::Mat)frame {
 	cv::Mat hsvFrame;
-	cv::cvtColor(frame, hsvFrame, CV_RGB2HSV);
+	cv::cvtColor(frame, hsvFrame, CV_BGR2HSV);
 
-	int lowH  = [ThresholdManager sharedManager].lowH;
-	int highH = [ThresholdManager sharedManager].highH;
-	int lowS  = [ThresholdManager sharedManager].lowS;
-	int highS = [ThresholdManager sharedManager].highS;
-	int lowV  = [ThresholdManager sharedManager].lowV;
-	int highV = [ThresholdManager sharedManager].highV;
+	int lowH  = [ConfigurationManager sharedManager].lowH;
+	int highH = [ConfigurationManager sharedManager].highH;
+	int lowS  = [ConfigurationManager sharedManager].lowS;
+	int highS = [ConfigurationManager sharedManager].highS;
+	int lowV  = [ConfigurationManager sharedManager].lowV;
+	int highV = [ConfigurationManager sharedManager].highV;
 
 	cv::Mat imgThresholded;
 
