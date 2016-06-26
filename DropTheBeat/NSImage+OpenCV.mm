@@ -83,12 +83,13 @@ static void ProviderReleaseDataNOP(void *info, const void *data, size_t size)
 
 - (id)initWithCVMat:(const cv::Mat&)cvMat
 {
-	cv::cvtColor(cvMat, cvMat, CV_BGR2RGB);
-	NSData *data = [NSData dataWithBytes:cvMat.data length:cvMat.elemSize() * cvMat.total()];
+	cv::Mat rgbMat;
+	cv::cvtColor(cvMat, rgbMat, CV_BGR2RGB);
+	NSData *data = [NSData dataWithBytes:rgbMat.data length:rgbMat.elemSize() * rgbMat.total()];
 
 	CGColorSpaceRef colorSpace;
 
-	if (cvMat.elemSize() == 1)
+	if (rgbMat.elemSize() == 1)
 	{
 		colorSpace = CGColorSpaceCreateDeviceGray();
 	}
@@ -100,11 +101,11 @@ static void ProviderReleaseDataNOP(void *info, const void *data, size_t size)
 	CGDataProviderRef provider = CGDataProviderCreateWithCFData((__bridge CFDataRef)data);
 
 
-	CGImageRef imageRef = CGImageCreate(cvMat.cols,                                     // Width
-										cvMat.rows,                                     // Height
+	CGImageRef imageRef = CGImageCreate(rgbMat.cols,                                    // Width
+										rgbMat.rows,                                    // Height
 										8,                                              // Bits per component
-										8 * cvMat.elemSize(),                           // Bits per pixel
-										cvMat.step[0],                                  // Bytes per row
+										8 * rgbMat.elemSize(),                          // Bits per pixel
+										rgbMat.step[0],                                 // Bytes per row
 										colorSpace,                                     // Colorspace
 										kCGImageAlphaNone | kCGBitmapByteOrderDefault,  // Bitmap info flags
 										provider,                                       // CGDataProviderRef

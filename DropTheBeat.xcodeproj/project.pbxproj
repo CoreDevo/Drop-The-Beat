@@ -7,17 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A2749DB51D1F601500D96E54 /* SettingViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2749DB31D1F601500D96E54 /* SettingViewController.mm */; };
+		A2749DB91D1F64F600D96E54 /* CustomColorView.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2749DB81D1F64F600D96E54 /* CustomColorView.mm */; };
 		A2A678031D1F05500078CD2D /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2A678021D1F05500078CD2D /* AppDelegate.mm */; };
 		A2A678061D1F05500078CD2D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A678051D1F05500078CD2D /* main.m */; };
 		A2A678091D1F05500078CD2D /* CameraViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2A678081D1F05500078CD2D /* CameraViewController.mm */; };
 		A2A6780B1D1F05500078CD2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2A6780A1D1F05500078CD2D /* Assets.xcassets */; };
 		A2A6780E1D1F05500078CD2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2A6780C1D1F05500078CD2D /* Main.storyboard */; };
 		A2A678171D1F0B090078CD2D /* NSImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2A678161D1F0B090078CD2D /* NSImage+OpenCV.mm */; };
-		A2A6781A1D1F248D0078CD2D /* ThresholdManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2A678191D1F248D0078CD2D /* ThresholdManager.mm */; };
+		A2A6781A1D1F248D0078CD2D /* ConfigurationManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2A678191D1F248D0078CD2D /* ConfigurationManager.mm */; };
 		A2A6781D1D1F26670078CD2D /* ConfigureViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2A6781C1D1F26670078CD2D /* ConfigureViewController.mm */; };
+		A2D82A811D1F790200440CF8 /* AudioPlayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2D82A801D1F790200440CF8 /* AudioPlayer.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A2749DB21D1F601500D96E54 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		A2749DB31D1F601500D96E54 /* SettingViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SettingViewController.mm; sourceTree = "<group>"; };
+		A2749DB71D1F64F600D96E54 /* CustomColorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomColorView.h; sourceTree = "<group>"; };
+		A2749DB81D1F64F600D96E54 /* CustomColorView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CustomColorView.mm; sourceTree = "<group>"; };
 		A2A677FE1D1F05500078CD2D /* DropTheBeat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DropTheBeat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2A678011D1F05500078CD2D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A2A678021D1F05500078CD2D /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
@@ -29,10 +36,12 @@
 		A2A6780F1D1F05500078CD2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2A678151D1F0AD60078CD2D /* NSImage+OpenCV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSImage+OpenCV.h"; sourceTree = "<group>"; };
 		A2A678161D1F0B090078CD2D /* NSImage+OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSImage+OpenCV.mm"; sourceTree = "<group>"; };
-		A2A678181D1F24770078CD2D /* ThresholdManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThresholdManager.h; sourceTree = "<group>"; };
-		A2A678191D1F248D0078CD2D /* ThresholdManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ThresholdManager.mm; sourceTree = "<group>"; };
+		A2A678181D1F24770078CD2D /* ConfigurationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigurationManager.h; sourceTree = "<group>"; };
+		A2A678191D1F248D0078CD2D /* ConfigurationManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ConfigurationManager.mm; sourceTree = "<group>"; };
 		A2A6781B1D1F26670078CD2D /* ConfigureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigureViewController.h; sourceTree = "<group>"; };
 		A2A6781C1D1F26670078CD2D /* ConfigureViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ConfigureViewController.mm; sourceTree = "<group>"; };
+		A2D82A7F1D1F78F400440CF8 /* AudioPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioPlayer.h; sourceTree = "<group>"; };
+		A2D82A801D1F790200440CF8 /* AudioPlayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioPlayer.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,10 +80,16 @@
 				A2A678081D1F05500078CD2D /* CameraViewController.mm */,
 				A2A6781B1D1F26670078CD2D /* ConfigureViewController.h */,
 				A2A6781C1D1F26670078CD2D /* ConfigureViewController.mm */,
+				A2749DB21D1F601500D96E54 /* SettingViewController.h */,
+				A2749DB31D1F601500D96E54 /* SettingViewController.mm */,
+				A2749DB71D1F64F600D96E54 /* CustomColorView.h */,
+				A2749DB81D1F64F600D96E54 /* CustomColorView.mm */,
 				A2A678151D1F0AD60078CD2D /* NSImage+OpenCV.h */,
 				A2A678161D1F0B090078CD2D /* NSImage+OpenCV.mm */,
-				A2A678181D1F24770078CD2D /* ThresholdManager.h */,
-				A2A678191D1F248D0078CD2D /* ThresholdManager.mm */,
+				A2D82A7F1D1F78F400440CF8 /* AudioPlayer.h */,
+				A2D82A801D1F790200440CF8 /* AudioPlayer.mm */,
+				A2A678181D1F24770078CD2D /* ConfigurationManager.h */,
+				A2A678191D1F248D0078CD2D /* ConfigurationManager.mm */,
 				A2A6780A1D1F05500078CD2D /* Assets.xcassets */,
 				A2A6780C1D1F05500078CD2D /* Main.storyboard */,
 				A2A6780F1D1F05500078CD2D /* Info.plist */,
@@ -161,10 +176,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2A678091D1F05500078CD2D /* CameraViewController.mm in Sources */,
+				A2D82A811D1F790200440CF8 /* AudioPlayer.mm in Sources */,
+				A2749DB91D1F64F600D96E54 /* CustomColorView.mm in Sources */,
 				A2A678171D1F0B090078CD2D /* NSImage+OpenCV.mm in Sources */,
 				A2A678061D1F05500078CD2D /* main.m in Sources */,
+				A2749DB51D1F601500D96E54 /* SettingViewController.mm in Sources */,
 				A2A678031D1F05500078CD2D /* AppDelegate.mm in Sources */,
-				A2A6781A1D1F248D0078CD2D /* ThresholdManager.mm in Sources */,
+				A2A6781A1D1F248D0078CD2D /* ConfigurationManager.mm in Sources */,
 				A2A6781D1D1F26670078CD2D /* ConfigureViewController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

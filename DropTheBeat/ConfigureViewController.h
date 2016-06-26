@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "ThresholdManager.h"
+#import "ConfigurationManager.h"
 
 @interface ConfigureViewController : NSViewController
 

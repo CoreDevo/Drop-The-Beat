@@ -14,7 +14,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "NSImage+OpenCV.h"
-#import "ThresholdManager.h"
+#import "ConfigurationManager.h"
 
 @interface CameraViewController : NSViewController
 

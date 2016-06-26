@@ -6,9 +6,9 @@
 //  Copyright © 2016 CoreDevo. All rights reserved.
 //
 
-#import "ThresholdManager.h"
+#import "ConfigurationManager.h"
 
-@implementation ThresholdManager
+@implementation ConfigurationManager
 
 @synthesize lowH;
 @synthesize lowS;
@@ -16,6 +16,7 @@
 @synthesize highH;
 @synthesize highS;
 @synthesize highV;
+@synthesize filePathsDict;
 
 - (id) init {
 	if (self = [super init]) {
@@ -29,14 +30,14 @@
 	return self;
 }
 
-+ (ThresholdManager *) sharedManager {
-	static ThresholdManager *sharedThresholdManager = nil;
++ (ConfigurationManager *) sharedManager {
+	static ConfigurationManager *sharedConfigurationManager = nil;
 	@synchronized (self) {
-		if (sharedThresholdManager == nil) {
-			sharedThresholdManager =[[self alloc] init];
+		if (sharedConfigurationManager == nil) {
+			sharedConfigurationManager =[[self alloc] init];
 		}
 	}
-	return sharedThresholdManager;
+	return sharedConfigurationManager;
 }
 
 @end
