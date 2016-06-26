@@ -810,7 +810,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
-                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="1" green="0.9839373911321081" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="wantsLayer" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -855,7 +855,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
-                                        <color key="value" red="0.99389857978627694" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="1" green="0.00029843863002976256" blue="0.65142704678897512" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="wantsLayer" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -900,7 +900,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
-                                        <color key="value" red="0.10163249314981937" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.035045482817539497" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="wantsLayer" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -945,7 +945,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
-                                        <color key="value" red="0.3455565459873462" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.20485383946547769" green="0.0" blue="0.59282291666666664" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="wantsLayer" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -990,7 +990,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
-                                        <color key="value" red="1" green="0.0" blue="0.68315858882472114" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="1" green="0.0099468241871529806" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="wantsLayer" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1080,14 +1080,19 @@
                     <connections>
                         <outlet property="audio1FilePathText" destination="mK8-Zf-Zkf" id="9qy-By-PAU"/>
                         <outlet property="audio1FileSelectButton" destination="Btb-Ub-Tu4" id="x5M-6V-H05"/>
+                        <outlet property="audio1View" destination="z6B-yr-plb" id="aIF-KI-Web"/>
                         <outlet property="audio2FilePathText" destination="JDW-e9-b6Z" id="89i-hi-oJM"/>
                         <outlet property="audio2FileSelectButton" destination="ef3-qu-230" id="ZHf-jL-7Xh"/>
+                        <outlet property="audio2View" destination="VNB-QA-fxS" id="xiD-XB-T7J"/>
                         <outlet property="audio3FilePathText" destination="tBb-Vd-eni" id="pGR-GE-4RC"/>
                         <outlet property="audio3FileSelectButton" destination="zcC-TN-KPS" id="EEQ-k4-rdo"/>
+                        <outlet property="audio3View" destination="JSb-Fm-um2" id="IsX-mp-tSe"/>
                         <outlet property="audio4FilePathText" destination="dAF-oO-NvW" id="9ic-iK-Ee2"/>
                         <outlet property="audio4FileSelectButton" destination="2Je-qo-Jh7" id="9cp-nK-DRe"/>
+                        <outlet property="audio4View" destination="fl0-ZA-h80" id="Tf2-Wm-9OI"/>
                         <outlet property="audio5FilePathText" destination="UcH-Y3-zMV" id="439-ul-5cf"/>
                         <outlet property="audio5FileSelectButton" destination="8Jd-vB-qV4" id="tUC-dt-8OE"/>
+                        <outlet property="audio5View" destination="hxv-B6-Np6" id="5CP-eP-6ar"/>
                         <outlet property="bgmFilePathText" destination="zq2-JL-kIz" id="JMe-tf-yDf"/>
                         <outlet property="bgmFileSelectButton" destination="hkt-K3-uoK" id="JvV-Zy-XBN"/>
                         <outlet property="loadFilesButton" destination="dI2-v3-bge" id="mAd-Nn-hzz"/>

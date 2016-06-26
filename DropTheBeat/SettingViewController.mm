@@ -8,14 +8,6 @@
 
 #import "SettingViewController.h"
 
-NSInteger SETTING_TAG_BGM = 9;
-NSInteger SETTING_TAG_AUDIO1 = 1;
-NSInteger SETTING_TAG_AUDIO2 = 2;
-NSInteger SETTING_TAG_AUDIO3 = 3;
-NSInteger SETTING_TAG_AUDIO4 = 4;
-NSInteger SETTING_TAG_AUDIO5 = 5;
-
-
 @interface SettingViewController ()
 
 @end
@@ -24,6 +16,7 @@ NSInteger SETTING_TAG_AUDIO5 = 5;
 
 NSArray *_textFields;
 NSArray *_selectButtons;
+BOOL _videoDetecting = NO;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,6 +33,12 @@ NSArray *_selectButtons;
 	_audio3FileSelectButton.tag = SETTING_TAG_AUDIO3;
 	_audio4FileSelectButton.tag = SETTING_TAG_AUDIO4;
 	_audio5FileSelectButton.tag = SETTING_TAG_AUDIO5;
+
+	_audio1View.audioTag = SETTING_TAG_AUDIO1;
+	_audio2View.audioTag = SETTING_TAG_AUDIO2;
+	_audio3View.audioTag = SETTING_TAG_AUDIO3;
+	_audio4View.audioTag = SETTING_TAG_AUDIO4;
+	_audio5View.audioTag = SETTING_TAG_AUDIO5;
 
 	_textFields = @[_bgmFilePathText,
 					_audio1FilePathText,
@@ -97,7 +96,7 @@ NSArray *_selectButtons;
 	[panel setCanChooseDirectories:NO];
 
 	NSArray *allowedFileTypes = @[@"mp3", @"aac"];
-	//[panel setAllowedFileTypes:allowedFileTypes];
+	[panel setAllowedFileTypes:allowedFileTypes];
 
 	NSInteger clicked = [panel runModal];
 	if (clicked == NSFileHandlingPanelOKButton) {
@@ -115,7 +114,17 @@ NSArray *_selectButtons;
 }
 
 - (void)startButtonPressed: (NSButton *)button {
-
+	if (!_videoDetecting) {
+		_videoDetecting = YES;
+		[_startButton setTitle:@"Stop"];
+		[[AudioPlayer sharedInstance] start];
+		[[NSNotificationCenter defaultCenter] postNotificationName:DBDetectStartNotification object:self];
+	} else {
+		_videoDetecting = NO;
+		[_startButton setTitle:@"Start"];
+		[[AudioPlayer sharedInstance] stop];
+		[[NSNotificationCenter defaultCenter] postNotificationName:DBDetectStopNotification object:self];
+	}
 }
 
 - (void)loadFilesButton: (NSButton *)button {

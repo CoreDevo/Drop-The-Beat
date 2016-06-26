@@ -15,6 +15,22 @@
 #import <Cocoa/Cocoa.h>
 #import "NSImage+OpenCV.h"
 #import "ConfigurationManager.h"
+#import "SettingViewController.h"
+
+typedef NS_ENUM(NSInteger, PixelColor) {
+	PixelColorBlue,
+	PixelColorYellow,
+	PixelColorGreen,
+	PixelColorRed,
+	PixelColorPink,
+	PixelColorPurple,
+	PixelColorNone
+};
+
+extern NSString * const DBDetectStartNotification;
+extern NSString * const DBDetectStopNotification;
+extern NSString * const DBShouldPlayBGMNotification;
+extern NSString * const DBShouldPlayAudioNotification;
 
 @interface CameraViewController : NSViewController
 

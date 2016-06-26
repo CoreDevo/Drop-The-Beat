@@ -13,6 +13,8 @@
 
 BOOL _running = NO;
 NSMutableDictionary *_fileDatas;
+AVAudioPlayer *_bgmPlayer;
+NSMutableArray *_currentPlayers;
 
 + (AudioPlayer *) sharedInstance {
 	static AudioPlayer *instance = nil;
@@ -20,6 +22,16 @@ NSMutableDictionary *_fileDatas;
 		if (instance == nil) {
 			instance = [[self alloc] init];
 		}
+	}
+	return instance;
+}
+
+- (id) init {
+	if (self = [super init]) {
+		_fileDatas = [[NSMutableDictionary alloc] init];
+		_currentPlayers = [[NSMutableArray alloc] init];
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playBackgroundMusic) name:DBShouldPlayBGMNotification object:nil];
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playAudioWithTag:) name:DBShouldPlayAudioNotification object:nil];
 	}
 	return self;
 }
@@ -50,10 +62,53 @@ NSMutableDictionary *_fileDatas;
 
 - (void) stop {
 	_running = NO;
+	if (_bgmPlayer != nil) {
+		[_bgmPlayer stop];
+		_bgmPlayer = nil;
+	}
+	for (AVAudioPlayer *player in _currentPlayers) {
+		[player stop];
+	}
+	[_currentPlayers removeAllObjects];
 }
 
 - (void) playBackgroundMusic {
 	if (!_running) { return; }
+	NSLog(@"Should play background music");
+	NSData *bgmData = [_fileDatas objectForKey:[NSNumber numberWithInteger:SETTING_TAG_BGM]];
+	if (bgmData != nil) {
+		_bgmPlayer = [[AVAudioPlayer alloc] initWithData:bgmData error:nil];
+		[_bgmPlayer setNumberOfLoops:-1];
+		[_bgmPlayer prepareToPlay];
+		if ([_bgmPlayer play]) {
+			NSLog(@"Playing BGM");
+		}
+	}
+}
+
+- (void) playAudioWithTag: (NSNotification*)notification {
+	if (!_running) { return; }
+	NSNumber *tag = [[notification userInfo] objectForKey:@"tag"];
+	NSLog(@"Should play audio with tag %@", tag);
+	NSData *audioData = [_fileDatas objectForKey: tag];
+	if (audioData != nil) {
+		NSError *error;
+		AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithData:audioData error:&error];
+		if (error != nil) {
+			NSLog(@"Encounter Error: %@", error);
+			return;
+		}
+		[player setDelegate:self];
+		[_currentPlayers addObject:player];
+		[player prepareToPlay];
+		if ([player play]) {
+			NSLog(@"Playing audio with tag %@", tag);
+		}
+	}
+}
+
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
+	[_currentPlayers removeObject:player];
 }
 
 @end

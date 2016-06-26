@@ -7,11 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "ConfigurationManager.h"
 
 @interface CustomColorView : NSView {
 	NSColor *backgroundColor;
+	NSInteger audioTag;
 }
 
 @property(strong) IBInspectable NSColor *backgroundColor;
+@property IBInspectable NSInteger audioTag;
 
 @end

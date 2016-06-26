@@ -10,12 +10,17 @@
 
 @implementation CustomColorView
 @synthesize backgroundColor;
+@synthesize audioTag;
 
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
 
 	[backgroundColor set];
 	NSRectFill([self bounds]);
+}
+
+- (void)mouseDown:(NSEvent *)theEvent {
+	[[ConfigurationManager sharedManager] setDisplayingFilterWithTag:self.audioTag];
 }
 
 @end

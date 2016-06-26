@@ -18,6 +18,7 @@
 		A2A6781A1D1F248D0078CD2D /* ConfigurationManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2A678191D1F248D0078CD2D /* ConfigurationManager.mm */; };
 		A2A6781D1D1F26670078CD2D /* ConfigureViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2A6781C1D1F26670078CD2D /* ConfigureViewController.mm */; };
 		A2D82A811D1F790200440CF8 /* AudioPlayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2D82A801D1F790200440CF8 /* AudioPlayer.mm */; };
+		A2D82A831D1FA7A000440CF8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2D82A821D1FA7A000440CF8 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		A2A6781C1D1F26670078CD2D /* ConfigureViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ConfigureViewController.mm; sourceTree = "<group>"; };
 		A2D82A7F1D1F78F400440CF8 /* AudioPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioPlayer.h; sourceTree = "<group>"; };
 		A2D82A801D1F790200440CF8 /* AudioPlayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioPlayer.mm; sourceTree = "<group>"; };
+		A2D82A821D1FA7A000440CF8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2D82A831D1FA7A000440CF8 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +61,7 @@
 		A2A677F51D1F05500078CD2D = {
 			isa = PBXGroup;
 			children = (
+				A2D82A821D1FA7A000440CF8 /* AVFoundation.framework */,
 				A2A678001D1F05500078CD2D /* DropTheBeat */,
 				A2A677FF1D1F05500078CD2D /* Products */,
 			);

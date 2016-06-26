@@ -11,10 +11,12 @@
 
 #import <AVKit/AVKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "CameraViewController.h"
+#import "SettingViewController.h"
 
 typedef void (^AudioPlayerLoadFileCompleteCallback)(BOOL success);
 
-@interface AudioPlayer : NSObject {
+@interface AudioPlayer : NSObject <AVAudioPlayerDelegate> {
 
 }
 
@@ -25,6 +27,7 @@ typedef void (^AudioPlayerLoadFileCompleteCallback)(BOOL success);
 - (void) start;
 - (void) stop;
 - (void) playBackgroundMusic;
+- (void) playAudioWithTag: (NSNumber*)tag;
 
 @end
 

@@ -7,10 +7,10 @@
 //
 
 #ifndef ConfigurationManager_h
-#define ConfigurationManagerr_h
+#define ConfigurationManager_h
 
 #import <Foundation/Foundation.h>
-
+#import "CameraViewController.h"
 
 @interface ConfigurationManager : NSObject {
 	int lowH;
@@ -22,12 +22,7 @@
 
 	NSMutableDictionary *filePathsDict;
 
-	NSString *bgmFilePath;
-	NSString *audio1FilePath;
-	NSString *audio2FilePath;
-	NSString *audio3FilePath;
-	NSString *audio4FilePath;
-	NSString *audio5FilePath;
+	NSInteger currentDisplayFilter;
 }
 
 @property(nonatomic) int lowH;
@@ -37,8 +32,11 @@
 @property(nonatomic) int highS;
 @property(nonatomic) int highV;
 @property(atomic) NSMutableDictionary *filePathsDict;
+@property(nonatomic) NSInteger currentDisplayFilter;
 
 +(ConfigurationManager *) sharedManager;
+
+-(void) setDisplayingFilterWithTag: (NSInteger)tag;
 
 @end
 
