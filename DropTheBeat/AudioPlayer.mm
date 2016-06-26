@@ -75,6 +75,21 @@ NSMutableArray *_currentPlayers;
 - (void) playBackgroundMusic {
 	if (!_running) { return; }
 	NSLog(@"Should play background music");
+	
+	NSString *path = [[NSBundle mainBundle] pathForResource:@"lets drop the beat" ofType:@"mp3"];
+	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+		NSData *dtbData = [[NSData alloc] initWithContentsOfFile:path];
+		if (dtbData != nil) {
+			dispatch_async(dispatch_get_main_queue(), ^{
+				AVAudioPlayer *dtbPlayer = [[AVAudioPlayer alloc] initWithData:dtbData error:nil];
+				[dtbPlayer setDelegate:self];
+				[_currentPlayers addObject:dtbPlayer];
+				[dtbPlayer prepareToPlay];
+				[dtbPlayer play];
+			});
+		}
+	});
+	
 	NSData *bgmData = [_fileDatas objectForKey:[NSNumber numberWithInteger:SETTING_TAG_BGM]];
 	if (bgmData != nil) {
 		_bgmPlayer = [[AVAudioPlayer alloc] initWithData:bgmData error:nil];

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		937101891D2027750005BAE1 /* lets drop the beat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 937101881D2027750005BAE1 /* lets drop the beat.mp3 */; };
 		A2749DB51D1F601500D96E54 /* SettingViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2749DB31D1F601500D96E54 /* SettingViewController.mm */; };
 		A2749DB91D1F64F600D96E54 /* CustomColorView.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2749DB81D1F64F600D96E54 /* CustomColorView.mm */; };
 		A2A678031D1F05500078CD2D /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2A678021D1F05500078CD2D /* AppDelegate.mm */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		937101881D2027750005BAE1 /* lets drop the beat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "lets drop the beat.mp3"; sourceTree = "<group>"; };
 		A2749DB21D1F601500D96E54 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		A2749DB31D1F601500D96E54 /* SettingViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SettingViewController.mm; sourceTree = "<group>"; };
 		A2749DB71D1F64F600D96E54 /* CustomColorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomColorView.h; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				A2D82A801D1F790200440CF8 /* AudioPlayer.mm */,
 				A2A678181D1F24770078CD2D /* ConfigurationManager.h */,
 				A2A678191D1F248D0078CD2D /* ConfigurationManager.mm */,
+				937101881D2027750005BAE1 /* lets drop the beat.mp3 */,
 				A2A6780A1D1F05500078CD2D /* Assets.xcassets */,
 				A2A6780C1D1F05500078CD2D /* Main.storyboard */,
 				A2A6780F1D1F05500078CD2D /* Info.plist */,
@@ -169,6 +172,7 @@
 			files = (
 				A2A6780B1D1F05500078CD2D /* Assets.xcassets in Resources */,
 				A2A6780E1D1F05500078CD2D /* Main.storyboard in Resources */,
+				937101891D2027750005BAE1 /* lets drop the beat.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
