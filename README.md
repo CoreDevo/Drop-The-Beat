@@ -1,5 +1,7 @@
 # Drop-The-Beat
 
+[Check it on Devpost](http://devpost.com/software/drop-the-beat)
+
 ####Inspiration
 Watching a DJ live performance always gives me a desire to try. Who knows if you can be the next greatest music remixer? However, a real DJ pad for only a trial is too cost-heavy. So how about on the weight of a paper?
 
